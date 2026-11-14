@@ -1,9 +1,11 @@
-# Food picture v1 (make.fun food-picture-01).
+# Food picture v2 (make.fun food-picture-01).
 #
 # The simplest entry the rules allow: a repository holding the image and
 # a program that copies it to /output/entry.png. The picture itself is
-# an original photorealistic tonkotsu ramen shot (tall noodle pull,
-# steam, chashu, runny egg, chili oil, dark moody background) made for
+# an original photorealistic tonkotsu ramen shot (tall glossy noodle
+# pull, steam, golden caramelised chashu fan, one ajitama egg with a
+# bright golden yolk dripping into the broth, chili-oil spiral, nori,
+# sesame, green onions, dark moody background with warm bokeh) made for
 # this competition. The program does no drawing, no network and no
 # randomness: it copies the same bytes every run.
 
@@ -30,6 +32,12 @@ def main():
         magic = f.read(3)
     if magic != b"\xff\xd8\xff":
         raise SystemExit("entry.png is not a JPEG")
+    # Also confirm the file is whole: a JPEG ends with the EOI marker.
+    with open(dst, "rb") as f:
+        f.seek(-2, os.SEEK_END)
+        tail = f.read(2)
+    if tail != b"\xff\xd9":
+        raise SystemExit("entry.png is truncated (no JPEG end marker)")
     return 0
 
 
