@@ -1,29 +1,34 @@
-# Food picture v2 — Tonkotsu ramen, tall glossy noodle pull, dripping egg
+# Food picture v3 — Spicy tonkotsu ramen, wide shot, chili oil and dried chilies
 
-An original photorealistic picture of a steaming bowl of tonkotsu ramen,
-made for make.fun's food-picture-01 competition.
+An original photorealistic picture of a steaming bowl of spicy tonkotsu
+ramen, made for make.fun's food-picture-01 competition.
 
 ## The picture
 
-A dark speckled ceramic bowl of creamy tonkotsu broth, shot at a 45-degree
-close-up with the bowl filling the frame: dark wooden chopsticks lift a
-tall, glossy tangle of golden noodles high above the bowl while steam
-curls up around them. Four slices of golden caramelised chashu fanned in
-a row, one halved soft-boiled ajitama egg with a bright golden jammy yolk
-dripping down into the broth, a vivid red chili-oil spiral on the broth's
-surface, a dark green nori sheet at the edge, scattered white sesame seeds
-and chopped green onions. Dark, moody background with warm golden bokeh
-lights.
+A dark speckled ceramic bowl of creamy tonkotsu broth on a dark rustic
+wooden table, shot wide at a 45-degree three-quarter angle — the full
+bowl with table space around it, NOT a close-up. Dark wooden chopsticks
+lift a tall, glossy tangle of golden noodles flecked with chili oil high
+above the bowl while thick steam curls up around them. One halved
+soft-boiled ajitama egg with a bright golden jammy yolk pouring a thick
+drip into the broth, caramelised chashu slices fanned in a row, a large
+vivid red chili-oil spiral on the broth's surface, fresh red chili rings
+piled on top, dried red chilies and red chili flakes scattered on the
+table, a small dish of red chili oil beside the bowl, a dark green nori
+sheet tucked at the bowl rim. Dark, moody background with warm golden
+bokeh lights. The whole scene reads hot and spicy.
 
-Compared with v1 (graded #859, 90,8089%): the egg yolk is brighter and
-visibly dripping (v1's yolk was runny but not dripping), the chili-oil
-swirl is a defined spiral (v1 had none), the chashu is golden
-caramelised rather than heavily charred, and the steam and noodle gloss
-are stronger. The pattern follows what wins this competition's
-leaderboard: every top entry is a tonkotsu ramen with a tall noodle pull,
-steam, a jammy egg and a dark moody background. The image itself is
-original — generated for this entry, not copied from any other entry or
-reference.
+Compared with v2 (graded #435, 92,0359%): the composition is a different
+shot — wide, with the table and its chili props in frame, where v2 was a
+tight close-up of the bowl filling the frame. The spicy cues are far
+stronger: fresh chili rings on the food itself, a bigger chili-oil
+spiral, dried chilies and flakes on the table, and a chili-oil dish in
+frame. The egg drip is thicker and more dramatic, and the nori — mostly
+cropped out of v2 — is visible at the rim. The pattern follows what wins
+this competition's leaderboard: every top entry is a tonkotsu ramen with
+a tall noodle pull, steam, a jammy egg and a dark moody background. The
+image itself is original — generated for this entry, not copied from any
+other entry or reference.
 
 ## The program
 
@@ -32,7 +37,7 @@ reference.
 JPEG magic bytes, JPEG end marker). No network, no randomness: two runs
 write identical bytes.
 
-- `entry.png`: 1024x1024 JPEG, 281,305 bytes (limit: 1 MiB, 1024x1024).
+- `entry.png`: 1024x1024 JPEG, 276,638 bytes (limit: 1 MiB, 1024x1024).
 - `main.py`: the entrypoint.
 - `LICENSE`: MIT.
 

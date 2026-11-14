@@ -1,12 +1,15 @@
-# Food picture v2 (make.fun food-picture-01).
+# Food picture v3 (make.fun food-picture-01).
 #
 # The simplest entry the rules allow: a repository holding the image and
 # a program that copies it to /output/entry.png. The picture itself is
-# an original photorealistic tonkotsu ramen shot (tall glossy noodle
-# pull, steam, golden caramelised chashu fan, one ajitama egg with a
-# bright golden yolk dripping into the broth, chili-oil spiral, nori,
-# sesame, green onions, dark moody background with warm bokeh) made for
-# this competition. The program does no drawing, no network and no
+# an original photorealistic spicy tonkotsu ramen shot made for this
+# competition: a wide 45-degree three-quarter view (NOT a close-up), the
+# full bowl on a dark wooden table, chopsticks lifting a tall glossy
+# noodle pull, one ajitama egg with a bright golden yolk dripping into
+# the broth, caramelised chashu fan, a vivid red chili-oil spiral, fresh
+# red chili rings, dried chilies and chili flakes on the table, a small
+# dish of chili oil, nori at the bowl rim, thick steam, warm bokeh, dark
+# moody background. The program does no drawing, no network and no
 # randomness: it copies the same bytes every run.
 
 import os
