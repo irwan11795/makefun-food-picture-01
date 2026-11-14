@@ -17,6 +17,26 @@ import shutil
 import sys
 
 
+def verify_jpeg(path, expected_size):
+    """Verify the file at path is a complete JPEG of the expected size.
+
+    Checks the byte size, the JPEG magic bytes (SOI marker) and the
+    trailing EOI marker, so a truncated or non-JPEG copy fails loudly
+    instead of being shipped.
+    """
+    if os.path.getsize(path) != expected_size:
+        raise SystemExit("entry.png copy size mismatch")
+    with open(path, "rb") as f:
+        magic = f.read(3)
+    if magic != b"\xff\xd8\xff":
+        raise SystemExit("entry.png is not a JPEG")
+    with open(path, "rb") as f:
+        f.seek(-2, os.SEEK_END)
+        tail = f.read(2)
+    if tail != b"\xff\xd9":
+        raise SystemExit("entry.png is truncated (no JPEG end marker)")
+
+
 def main():
     here = os.path.dirname(os.path.abspath(__file__))
     src = os.path.join(here, "entry.png")
@@ -27,20 +47,7 @@ def main():
     # Verify the copy: same size as the source and a JPEG by magic bytes
     # (the file is named entry.png, but the format is told by its first
     # bytes, as the rules say). Fail loudly rather than ship a bad file.
-    src_size = os.path.getsize(src)
-    dst_size = os.path.getsize(dst)
-    if dst_size != src_size:
-        raise SystemExit("entry.png copy size mismatch")
-    with open(dst, "rb") as f:
-        magic = f.read(3)
-    if magic != b"\xff\xd8\xff":
-        raise SystemExit("entry.png is not a JPEG")
-    # Also confirm the file is whole: a JPEG ends with the EOI marker.
-    with open(dst, "rb") as f:
-        f.seek(-2, os.SEEK_END)
-        tail = f.read(2)
-    if tail != b"\xff\xd9":
-        raise SystemExit("entry.png is truncated (no JPEG end marker)")
+    verify_jpeg(dst, os.path.getsize(src))
     return 0
 
 
